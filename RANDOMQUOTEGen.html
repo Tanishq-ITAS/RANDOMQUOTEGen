@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Random Quote Generator</h1>
+    <p id="quote"></p>
+    <button id="generate-quote-button">Generate Quote</button>
+    <script>
+      // Quotes to display
+      var quotes = [
+        "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+        "It does not matter how slowly you go as long as you do not stop.",
+        "The only way to do great work is to love what you do.",
+        "Believe you can and you're halfway there.",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall."
+      ];
+
+      // Get the generate quote button
+      var generateQuoteButton = document.getElementById("generate-quote-button");
+
+      // Get the quote element
+      var quoteElement = document.getElementById("quote");
+
+      // Add a click event listener to the button
+      generateQuoteButton.addEventListener("click", function() {
+        // Generate a random number between 0 and the number of quotes
+        var randomNumber = Math.floor(Math.random() * quotes.length);
+
+        // Get the quote at the random number index
+        var quote = quotes[randomNumber];
+
+        // Update the quote element with the new quote
+        quoteElement.innerHTML = quote;
+      });
+    </script>
+  </body>
+</html>
